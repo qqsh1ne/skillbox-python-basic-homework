@@ -1,8 +1,7 @@
 def reverse_float_number(number):
     int_part = int(number)
-    float_part_len = len(str(number)) - len(str(int(number))) - 1
+    float_part_len = len(str(number)) - len(str(int_part)) - 1
     float_part = int(number * 10 ** float_part_len % 10 ** float_part_len)
-
     return float(str(reverse_int_number(int_part)) + '.' + str(reverse_int_number(float_part)))
 
 
