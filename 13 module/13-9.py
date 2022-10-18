@@ -15,7 +15,6 @@ current_debt = credit_debt
 
 K = credit_percent * (1 + credit_percent) ** credit_years / ((1 + credit_percent) ** credit_years - 1)
 A = round(K * credit_debt, 2)
-
 for year in range(1, years_before_changes + 1):
     percent = current_debt * credit_percent
     debt_payment = A - percent
@@ -29,7 +28,7 @@ years_left = credit_years - 3
 credit_percent = int(input('Увеличение ставки до: ')) / 100
 
 K = credit_percent * (1 + credit_percent) ** credit_years / ((1 + credit_percent) ** credit_years - 1)
-A = round(K * credit_debt, 2)
+A = round(K * current_debt, 2)
 
 for year in range(1, years_left + 1):
     percent = current_debt * credit_percent
