@@ -13,7 +13,7 @@ def get_winners(players, min_score):
 def get_second_tour_members(winners):
     result = str(len(winners)) + '\n'
     for winner in winners:
-        result += f'{len(winners)}) {winner[1][0]}. {winner[1]} {winner[2]}\n'
+        result += f'{len(winners)}) {winner[1][0]}. {winner[0]} {winner[2]}\n'
     passed = open('second_tour.txt', 'w', encoding='utf8')
     passed.write(result)
     passed.close()
