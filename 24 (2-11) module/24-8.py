@@ -35,11 +35,11 @@ class Game:
     def get_winner(self):
         if self.player_1.points > 21 and self.player_2.points > 21:
             print('Ничья. У обоих перебор.')
-            print(f'{self.player_1.name}, набрал {self.player_1.points} очков. {self.player_2.name} набрал {self.player_2.points} очков.')
+            print(f'{self.player_1.__name}, набрал {self.player_1.points} очков. {self.player_2.__name} набрал {self.player_2.points} очков.')
         elif self.player_1.points > 21 or self.player_2.points > self.player_1.points:
-            print(f'Победил {self.player_2.name}, набрав {self.player_2.points} очков. У {self.player_1.name} {self.player_1.points} очков.')
+            print(f'Победил {self.player_2.__name}, набрав {self.player_2.points} очков. У {self.player_1.__name} {self.player_1.points} очков.')
         elif self.player_2.points > 21 or self.player_1.points > self.player_2.points:
-            print(f'Победил {self.player_1.name}, набрав {self.player_1.points} очков. У {self.player_2.name} {self.player_2.points} очков.')
+            print(f'Победил {self.player_1.__name}, набрав {self.player_1.points} очков. У {self.player_2.__name} {self.player_2.points} очков.')
         elif self.player_1.points == self.player_2.points:
             print(f'Ничья! У обоих игроков {self.player_1.points} очков.')
         else:

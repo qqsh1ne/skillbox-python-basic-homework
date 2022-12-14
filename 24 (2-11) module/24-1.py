@@ -8,7 +8,7 @@ class Warrior:
         self.health = health
 
     def attack(self, warrior):
-        print(f'{self.name} атаковал {warrior.name}!')
+        print(f'{self.name} атаковал {warrior.__name}!')
         warrior.damage(self.power)
 
     def damage(self, power):

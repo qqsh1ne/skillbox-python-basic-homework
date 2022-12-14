@@ -6,13 +6,13 @@ def is_valid(string):
         raise IndexError('Должны присутствовать все три поля')
     else:
         if not data[0].isalpha():
-            raise NameError('Поле «Имя» должно содержать только буквы')
+            raise NameError('Поле «Имя» содержит НЕ только буквы')
         if '@' not in data[1] or '.' not in data[1]:
-            raise SyntaxError('Поле «Имейл» должно содержать @ и точку')
+            raise SyntaxError('Поле «Имейл» НЕ содержит @ и . (точку)')
         if not data[2].isdigit():
-            raise ValueError('Поле «Возраст» должно являться числом')
+            raise ValueError('Поле «Возраст» НЕ является числом')
         elif int(data[2]) < 10 or int(data[2]) > 99:
-            raise ValueError('Поле «Возраст» должно являться числом от 10 до 99')
+            raise ValueError('Поле «Возраст» НЕ является числом от 10 до 99')
     return True
 
 
@@ -34,5 +34,5 @@ with open(file_reg_name, 'r', encoding='utf8') as f_registration, \
         try:
             if is_valid(line):
                 file_good.write(line)
-        except (IndexError, NameError, SyntaxError, ValueError):
-            file_bad.write(line)
+        except (IndexError, NameError, SyntaxError, ValueError) as e:
+            file_bad.write(f'{line.rstrip()}   {e}\n')
