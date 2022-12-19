@@ -45,7 +45,7 @@ class Apartment(Property):
 
 class Car(Property):
     """
-    Класс квартиры. Родитель: Property
+    Класс машины. Родитель: Property
 
     Args:
         worth: стоимость имущества
@@ -68,7 +68,7 @@ class Car(Property):
 
 class CountryHouse(Property):
     """
-    Класс квартиры. Родитель: Property
+    Класс дома. Родитель: Property
 
     Args:
         worth: стоимость имущества
