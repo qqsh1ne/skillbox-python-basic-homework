@@ -122,7 +122,7 @@ class Resident:
         satiety - изначальная сытость
 
     Attributes:
-        name - имя
+        __name - имя
         satiety - сытость
     """
     def __init__(self, name: str, satiety: int):

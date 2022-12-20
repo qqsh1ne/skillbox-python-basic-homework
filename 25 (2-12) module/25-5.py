@@ -7,8 +7,12 @@ class Car:
     Класс машины
 
     Args:
-        x, y (float) - начальные координаты машины
-        direction (float) - направление (угол поворота)
+        x, y - начальные координаты машины
+        direction - направление (угол поворота)
+
+    Attributes:
+        __x, __y - начальные координаты машины
+        __direction - направление (угол поворота)
     """
     def __init__(self, x: int, y: int, direction: float):
         self.__x = x
@@ -41,8 +45,12 @@ class Bus(Car):
     Класс автобуса. Родитель: Car
 
     Args:
-        x, y (float) - начальные координаты автобуса
-        direction (float) - направление (угол поворота)
+        x, y - начальные координаты автобуса
+        direction - направление (угол поворота)
+
+    Attributes:
+        __x, __y - начальные координаты автобуса
+        __direction - направление (угол поворота)
     """
     __MONEY_PER_PASSENGER = 3
     __DISTANCE_COEFFICIENT = 0.1

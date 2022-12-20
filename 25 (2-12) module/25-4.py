@@ -2,6 +2,19 @@ import random
 
 
 class Person:
+    """
+    Класс человека
+
+    Args:
+        name - имя человека
+        surname - фамилия человека
+        age - возраст человека
+
+    Attributes:
+        __name - имя человека
+        __surname - фамилия человека
+        __age - возраст человека
+    """
     def __init__(self, name: str, surname: str, age: int):
         self.__name = name
         self.__surname = surname
@@ -12,6 +25,13 @@ class Person:
 
     @staticmethod
     def generate_person():
+        """
+        Создает человека с рандомными аргументами
+
+        :return: Человек со случайными данными
+
+        :rtype: Person
+        """
         name = random.choice(names)
         surname = random.choice(surnames)
         age = random.randint(20, 80)
@@ -19,7 +39,25 @@ class Person:
 
 
 class Employee(Person):
+    """
+    Класс сотрудника. Родитель - Person
+
+    Args:
+        name - имя человека
+        surname - фамилия человека
+        age - возраст человека
+
+    Attributes:
+        __name - имя человека
+        __surname - фамилия человека
+        __age - возраст человека
+    """
     def calc_salary(self):
+        """
+        Высчитывает зарплату сотрудника
+
+        :return: Зарплата сотрудника
+        """
         raise Exception('This method must be overriden')
 
     def __str__(self):
@@ -27,25 +65,84 @@ class Employee(Person):
 
 
 class Manager(Employee):
+    """
+    Класс менеджера. Родитель - Employee
+
+    Args:
+        name - имя человека
+        surname - фамилия человека
+        age - возраст человека
+
+    Attributes:
+        __name - имя человека
+        __surname - фамилия человека
+        __age - возраст человека
+    """
     def calc_salary(self):
+        """
+        Высчитывает зарплату менеджера
+
+        :return: Зарплата менеджера
+        :rtype: int
+        """
         return 13000
 
 
 class Agent(Employee):
+    """
+    Класс агента. Родитель - Employee
+
+    Args:
+        name - имя человека
+        surname - фамилия человека
+        age - возраст человека
+        sales - объем продаж
+
+    Attributes:
+        __name - имя человека
+        __surname - фамилия человека
+        __age - возраст человека
+        __sales - объем продаж
+    """
     def __init__(self, name: str, surname: str, age: int, sales: int):
         super().__init__(name, surname, age)
         self.__sales = sales
 
     def calc_salary(self):
+        """
+        Высчитывает зарплату агента
+        :return: Зарплата агента
+        :rtype: int
+        """
         return 5000 + 0.05 * self.__sales
 
 
 class Worker(Employee):
+    """
+    Класс работника. Родитель - Employee
+
+    Args:
+        name - имя человека
+        surname - фамилия человека
+        age - возраст человека
+        hours - кол-во отработанных часов
+
+    Attributes:
+        __name - имя человека
+        __surname - фамилия человека
+        __age - возраст человека
+        __hours - кол-во отработанных часов
+    """
     def __init__(self, name: str, surname: str, age: int, hours: int):
         super().__init__(name, surname, age)
         self.__hours = hours
 
     def calc_salary(self):
+        """
+        Высчитывает зарплату агента
+        :return: Зарплата агента
+        :rtype: int
+        """
         return 100 * self.__hours
 
 

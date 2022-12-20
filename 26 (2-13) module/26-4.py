@@ -1,10 +1,26 @@
 class Node:
+    """
+    Элемент односвязного списка
+
+    Args:
+        value - значение элемента
+
+    Attributes:
+        value - значение элемента
+        next_node - следующий элемент
+    """
     def __init__(self, value=None):
         self.value = value
         self.next_node = None
 
 
 class LinkedList:
+    """
+    Односвязный список
+
+    Attributes:
+        __head - 'Головной' элемент
+    """
     def __init__(self):
         self.__head = None
 
@@ -25,6 +41,11 @@ class LinkedList:
             current = current.next_node
 
     def append(self, value):
+        """
+        Добавляет элемент в конец односвязного списка
+
+        :param value: Значение нового элемента
+        """
         if self.__head is None:
             self.__head = Node(value)
             return
@@ -34,30 +55,41 @@ class LinkedList:
                 current = current.next_node
             current.next_node = Node(value)
 
-    def get(self, num):
+    def get(self, index):
+        """
+        Получает элемент списка по индексу
+        
+        :param index: Индекс элемента
+        :return: Значение полученного элемента списка
+        """
         if self.__head is None:
             raise IndexError('Индекс вне границ списка')
         else:
             count = 0
             current = self.__head
             while current:
-                if num == count:
+                if index == count:
                     return current.value
                 current = current.next_node
                 count += 1
             else:
                 raise IndexError('Индекс вне границ списка')
 
-    def remove(self, num):
+    def remove(self, index):
+        """
+        Удаляет элемент по индексу
+        
+        :param index: Индекс удаляемого элемента
+        """
         if self.__head is not None:
-            if num == 0:
+            if index == 0:
                 self.__head = self.__head.next_node
                 return
             count = 1
             current = self.__head.next_node
             prev = self.__head
             while current:
-                if num == count:
+                if index == count:
                     if current.next_node is None:
                         prev.next_node = None
                         return

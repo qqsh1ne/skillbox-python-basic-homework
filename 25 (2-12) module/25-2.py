@@ -42,6 +42,9 @@ class Buddhist:
 
     Args:
         karma - Начальная карма (по умолчанию 0)
+
+    Args:
+        __karma - Текущая карма
     """
     def __init__(self, karma=0):
         self.__karma = karma
@@ -65,6 +68,11 @@ class Buddhist:
 
 
 def one_day():
+    """
+    Буддист проживает один день, в который может что-то произойти
+
+    :return: Если ошибок не произошло, то возвращает добавляемую карму
+    """
     if random.randint(1, 10) == 1:
         raise random.choice([DrunkError('Напился'),
                              KillError('Убил'),

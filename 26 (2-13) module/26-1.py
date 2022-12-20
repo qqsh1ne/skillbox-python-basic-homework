@@ -1,11 +1,22 @@
 class Squares:
+    """
+    Класс-итератор для генерации последовательности из квадратов чисел
+
+    Args:
+        limit - максимальное число, до которого надо возвращать квадраты
+
+    Attributes:
+        __limit - максимальное число, до которого надо возвращать квадраты
+        __current_element - текущий элемент
+        __counter - счетчик сгенерированных чисел
+    """
     def __init__(self, limit: int) -> None:
         self.__limit = limit
-        self.__first_element = 0
+        self.__current_element = 0
         self.__counter = 0
 
     def __iter__(self):
-        self.__first_element = 0
+        self.__current_element = 0
         self.__counter = 0
         return self
 
@@ -13,11 +24,16 @@ class Squares:
         self.__counter += 1
         if self.__limit <= 0 or self.__counter > self.__limit:
             raise StopIteration
-        self.__first_element += 1
-        return self.__first_element ** 2
+        self.__current_element += 1
+        return self.__current_element ** 2
 
 
 def square(nums: int):
+    """
+    Возводит в квадрат числа до указанного
+    :param nums:
+    :return:
+    """
     for num in range(1, nums + 1):
         yield num ** 2
 

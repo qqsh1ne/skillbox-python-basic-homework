@@ -4,19 +4,28 @@ class Property:
 
     Args:
         worth: стоимость имущества
+
+    Attributes:
+        __worth: стоимость имущества
     """
     def __init__(self, worth):
         self.__worth = worth
 
     def get_worth(self):
         """
-        Геттер для получения стоимости.
+        Геттер для получения стоимости имущества.
         :return: __worth
         :rtype: float
         """
         return self.__worth
 
     def get_tax(self):
+        """
+        Высчитывает налог на данное имущество
+
+        :return: Налог на имущество
+        :rtype: float
+        """
         raise Exception('This method must be overriden')
 
 
@@ -26,18 +35,15 @@ class Apartment(Property):
 
     Args:
         worth: стоимость имущества
-
-    Attributes:
-        worth: стоимость имущества
-        tax: налог на имущество
     """
     def __init__(self, worth):
         super().__init__(worth)
 
     def get_tax(self):
         """
-        Геттер для получения налога.
-        :return: tax
+        Высчитывает налог на данное имущество
+
+        :return: Налог на имущество
         :rtype: float
         """
         return self.get_worth() / 1000
@@ -49,18 +55,15 @@ class Car(Property):
 
     Args:
         worth: стоимость имущества
-
-    Attributes:
-        worth: стоимость имущества
-        tax: налог на имущество
     """
     def __init__(self, worth):
         super().__init__(worth)
 
     def get_tax(self):
         """
-        Геттер для получения налога.
-        :return: tax
+        Высчитывает налог на данное имущество
+
+        :return: Налог на имущество
         :rtype: float
         """
         return self.get_worth() / 200
@@ -72,18 +75,15 @@ class CountryHouse(Property):
 
     Args:
         worth: стоимость имущества
-
-    Attributes:
-        worth: стоимость имущества
-        tax: налог на имущество
     """
     def __init__(self, worth):
         super().__init__(worth)
 
     def get_tax(self):
         """
-        Геттер для получения налога.
-        :return: tax
+        Высчитывает налог на данное имущество
+
+        :return: Налог на имущество
         :rtype: float
         """
         return self.get_worth() / 500
