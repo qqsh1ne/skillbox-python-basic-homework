@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Node:
     """
     Элемент односвязного списка
@@ -9,7 +12,7 @@ class Node:
         value - значение элемента
         next_node - следующий элемент
     """
-    def __init__(self, value=None):
+    def __init__(self, value=None) -> None:
         self.value = value
         self.next_node = None
 
@@ -21,10 +24,10 @@ class LinkedList:
     Attributes:
         __head - 'Головной' элемент
     """
-    def __init__(self):
+    def __init__(self) -> None:
         self.__head = None
 
-    def __str__(self):
+    def __str__(self) -> str:
         if self.__head is None:
             return '[]'
         current_node = self.__head
@@ -34,13 +37,13 @@ class LinkedList:
             current_node = current_node.next_node
         return '[' + string[:-1] + ']'
 
-    def __iter__(self):
+    def __iter__(self) -> Any:
         current = self.__head
         while current is not None:
             yield current.value
             current = current.next_node
 
-    def append(self, value):
+    def append(self, value: Any) -> None:
         """
         Добавляет элемент в конец односвязного списка
 
@@ -55,11 +58,12 @@ class LinkedList:
                 current = current.next_node
             current.next_node = Node(value)
 
-    def get(self, index):
+    def get(self, index: int) -> Any:
         """
         Получает элемент списка по индексу
         
         :param index: Индекс элемента
+
         :return: Значение полученного элемента списка
         """
         if self.__head is None:
@@ -75,7 +79,7 @@ class LinkedList:
             else:
                 raise IndexError('Индекс вне границ списка')
 
-    def remove(self, index):
+    def remove(self, index: int) -> None:
         """
         Удаляет элемент по индексу
         

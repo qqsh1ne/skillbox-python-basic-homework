@@ -1,7 +1,7 @@
 import os
 
 
-def line_count(file_name):
+def line_count(file_name: str) -> int:
     count = 0
     with open(file_name, "r") as file:
         for line in file.readlines():

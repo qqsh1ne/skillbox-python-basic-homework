@@ -8,7 +8,7 @@ class File:
     Attributes:
         file_name - название файла
     """
-    def __init__(self, file_name):
+    def __init__(self, file_name: str):
         self.file_name = file_name
 
     def __enter__(self):
@@ -23,9 +23,10 @@ class File:
         self.file.close()
         return True
 
-    def write(self, value):
+    def write(self, value: str) -> None:
         """
         Записывает значение в файл
+
         :param value: Значение, которое нужно записать
         """
         self.file.write(value)

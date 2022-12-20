@@ -35,7 +35,7 @@ def print_list(lst: list) -> None:
 
 
 @logging
-def convert_to_int(string: Any) -> int:
+def convert_to_int(string: str) -> int:
     """
     Функция преобразования значения в integer
 

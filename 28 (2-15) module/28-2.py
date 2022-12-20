@@ -6,7 +6,7 @@ class MyMath:
     Класс для работы с геометрическими объектами
     """
     @classmethod
-    def circle_len(cls, r) -> float:
+    def circle_len(cls, r: float) -> float:
         """
         Высчитывает длину окружности
 
@@ -17,7 +17,7 @@ class MyMath:
         return 2 * r * math.pi
 
     @classmethod
-    def circle_sq(cls, r) -> float:
+    def circle_sq(cls, r: float) -> float:
         """
         Высчитывает площадь окружности
 
@@ -28,7 +28,7 @@ class MyMath:
         return r ** 2 * math.pi
 
     @classmethod
-    def cube_vol(cls, edge) -> float:
+    def cube_vol(cls, edge: float) -> float:
         """
         Высчитывает объём куба
         :param edge: Сторона куба
@@ -37,7 +37,7 @@ class MyMath:
         return (2 * edge) ** 3
 
     @classmethod
-    def sphere_sq(cls, r) -> float:
+    def sphere_sq(cls, r: float) -> float:
         """
         Высчитывает площадь сферы
 
@@ -48,7 +48,7 @@ class MyMath:
         return r ** 2 * math.pi * 4
 
     @classmethod
-    def sphere_vol(cls, r) -> float:
+    def sphere_vol(cls, r: float) -> float:
         """
         Высчитывает объём сферы
 

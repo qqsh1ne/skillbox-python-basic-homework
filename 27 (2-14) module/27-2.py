@@ -19,7 +19,7 @@ def freeze(func: Callable) -> Any:
 
 
 @freeze
-def test():
+def test() -> None:
     print('В стадии разработки....')
 
 

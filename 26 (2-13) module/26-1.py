@@ -15,7 +15,7 @@ class Squares:
         self.__current_element = 0
         self.__counter = 0
 
-    def __iter__(self):
+    def __iter__(self) -> 'Squares':
         self.__current_element = 0
         self.__counter = 0
         return self
@@ -28,7 +28,7 @@ class Squares:
         return self.__current_element ** 2
 
 
-def square(nums: int):
+def square(nums: int) -> int:
     """
     Возводит в квадрат числа до указанного
     :param nums:
@@ -38,7 +38,7 @@ def square(nums: int):
         yield num ** 2
 
 
-max_number = int(input('Введите число от 1 до N: '))
+max_number = int(input('Введите целое число от 1 до N: '))
 squares = Squares(max_number)
 print('\nКласс-итератор')
 for squared_number in squares:
