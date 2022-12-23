@@ -5,6 +5,12 @@ diff_list = ['services', 'staff', 'datetime']
 
 
 def compare_two_jsons(json_1, json_2):
+    """
+    Позволяет сравнить два json файла по указанным в diff_list ключам
+    :param json_1: Первый json файл
+    :param json_2: Второй json файл
+    :return: Их различия
+    """
     result = {}
     for key, value in json_1.items():
         if type(value) == dict:
